@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Letter PNG</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #ffe4ec, #fff0f5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PNG paper */
+.paper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    transform: rotate(-2deg) scale(0.8); /* start smaller for animation */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    opacity: 0;
+    animation: appear 1s ease forwards; /* intro animation */
+}
+
+.paper:hover {
+    transform: rotate(2deg) scale(1); /* slight rotation and normal scale */
+}
+
+/* Intro animation */
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.8);
+    }
+    60% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Back button */
+.button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: buttonAppear 1s ease 0.8s forwards;
+}
+
+.button:hover {
+    background: #ffe4ec;
+}
+
+/* Button fade-in animation */
+@keyframes buttonAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Paper PNG -->
+    <img src="../images/loveletter.png" class="paper" alt="Love Letter">
+
+    <button class="button" onclick="goBack()">Back</button>
+</div>
+
+<script>
+function goBack(){
+    window.location.href = "love.html"; // change to your main page
+}
+</script>
+
+</body>
+</html>

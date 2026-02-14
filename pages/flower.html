@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowers for You</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #ffe4ec, #fff0f5);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* floating flowers */
+.flower{
+    position:absolute;
+    font-size:24px;
+    animation: float 8s linear infinite;
+    opacity:0.6;
+}
+
+@keyframes float{
+    0%{ transform: translateY(100vh); opacity:0; }
+    50%{ opacity:0.7; }
+    100%{ transform: translateY(-10vh); opacity:0; }
+}
+
+.container{
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    max-width:400px;
+    width:90%;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(30px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+/* PNG PLACEHOLDER BOX */
+.image-box{
+    width:200px;
+    height:200px;
+    margin:0 auto 20px auto;
+    border:3px dashed #ff9eb5;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:white;
+}
+
+/* This is where your flower PNG goes */
+.image-box img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    animation: breathe 3s infinite ease-in-out;
+}
+
+@keyframes breathe{
+    0%{ transform:scale(1); }
+    50%{ transform:scale(1.05); }
+    100%{ transform:scale(1); }
+}
+
+h1{
+    margin:10px 0;
+    font-size:26px;
+}
+
+p{
+    font-size:16px;
+    color:#444;
+    line-height:1.6;
+}
+
+.button{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:15px;
+    background:#ffc0cb;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.button:hover{
+    background:#ff9eb5;
+}
+
+</style>
+</head>
+<body>
+
+<!-- floating flowers -->
+<div class="flower" style="left:10%; animation-delay:0s;">🌸</div>
+<div class="flower" style="left:40%; animation-delay:2s;">🌸</div>
+<div class="flower" style="left:70%; animation-delay:4s;">🌸</div>
+
+<div class="container">
+
+<div class="image-box">
+    <img src="../images/flower.jpg" alt="Flower">
+</div>
+
+<h1>Flowers for you 🌸</h1>
+
+<p>
+Yuki, I can’t give you real flowers right now, but I hope the day comes when I can finally hand you one myself.<br><br>
+
+So for now, I made you a Lego flower for you. Yes, it may look simple, but it’s special to me because it represents something I wish I could give you in real life. Something made with care, something that lasts.
+</p>
+
+<button class="button" onclick="goBack()">Back</button>
+
+</div>
+
+<script>
+function goBack(){
+    window.location.href = "love.html";
+}
+</script>
+
+
+</body>
+</html>

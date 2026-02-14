@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose One</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#ffc0cb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    margin-bottom:30px;
+    letter-spacing:2px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2, 120px);
+    gap:25px;
+    justify-content:center;
+}
+
+.circle{
+    width:120px;
+    height:120px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+
+    /* animation */
+    animation: breathe 2s infinite ease-in-out;
+    transition:0.2s;
+}
+
+.circle:hover{
+    animation:none;
+    transform:scale(1.15);
+}
+
+.circle img{
+    width:70px;
+}
+
+@keyframes breathe{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.1);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* mobile */
+@media(max-width:500px){
+
+    .grid{
+        grid-template-columns:repeat(2, 100px);
+        gap:20px;
+    }
+
+    .circle{
+        width:100px;
+        height:100px;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>CHOOSE ONE TO BEGIN</h1>
+
+<div class="grid">
+
+<div class="circle" onclick="openPage('letter.html')">
+<img src="../images/duck.gif">
+</div>
+
+<div class="circle" onclick="openPage('page2.html')">
+<img src="../images/duck.gif">
+</div>
+
+<div class="circle" onclick="openPage('page3.html')">
+<img src="../images/duck.gif">
+</div>
+
+<div class="circle" onclick="openPage('flower.html')">
+<img src="../images/duck.gif">
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function openPage(page){
+    window.location.href = page;
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Collage</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffe4ec, #fff0f5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #ff6f91;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* collage photos */
+.photo {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.photo:nth-child(1) { animation-delay: 0.2s; }
+.photo:nth-child(2) { animation-delay: 0.4s; }
+.photo:nth-child(3) { animation-delay: 0.6s; }
+.photo:nth-child(4) { animation-delay: 0.8s; }
+.photo:nth-child(5) { animation-delay: 1s; }
+.photo:nth-child(6) { animation-delay: 1.2s; }
+
+/* fade-in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Back button */
+.button {
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ffe4ec;
+}
+</style>
+</head>
+<body>
+
+<h1>Here’s a little collection of ourr moments :p</h1>
+
+<div class="container">
+    <!-- Replace src with your images -->
+    <img src="../images/skibidi1.jpg" class="photo" alt="Memory 1">
+    <img src="../images/skibidi2.jpg" class="photo" alt="Memory 2">
+    <img src="../images/skibidi3.png" class="photo" alt="Memory 3">
+    <img src="../images/skibidi4.jpg" class="photo" alt="Memory 4">
+</div>
+
+<button class="button" onclick="goBack()">Back</button>
+
+<script>
+function goBack(){
+    window.location.href = "love.html"; // change to your main page
+}
+</script>
+
+</body>
+</html>
